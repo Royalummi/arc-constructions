@@ -1,0 +1,57 @@
+---
+import Container from "../components/Container.astro";
+---
+
+<footer class="bg-white text-[#002E5D] py-10 px-4 sm:px-6 lg:px-8">
+  <Container>
+    <!-- Middle Row: Logo + Navigation -->
+    <div
+      class="pb-6 flex flex-col md:flex-row items-center justify-between gap-8"
+    >
+      <!-- Logo -->
+      <div
+        class="flex flex-col items-center md:items-start text-center md:text-left"
+      >
+        <img src="/src/assets/logo.svg" alt="ARC Logo" class="h-18 mb-2" />
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex gap-6 text-sm font-medium text-[22px]">
+        <a href="#about" class="hover:text-brand transition">Our Story</a>
+        <a href="#projects" class="hover:text-brand transition">Projects</a>
+        <a href="#contact" class="hover:text-brand transition">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Divider -->
+    <hr class="py-6 border-black" />
+
+    <!-- Bottom Bar: Contact Info + Copyright -->
+    <div
+      class="flex flex-col md:flex-row items-center justify-between text-sm text-gray-600 gap-4"
+    >
+      <!-- Left Info -->
+      <div
+        class="flex flex-wrap gap-6 items-center justify-center md:justify-start"
+      >
+        <div class="flex items-center gap-2 border-b border-black pb-3">
+          <img src="/src/assets/icons/dark-mail.svg" alt="Email" />
+          hello@arcconstructions.com
+        </div>
+        <div class="flex items-center gap-2 border-b border-black pb-3">
+          <img src="/src/assets/icons/dark-call.svg" alt="Phone" />
+          +91 91813 23 2309
+        </div>
+        <div class="flex items-center gap-2 border-b border-black pb-3">
+          <img src="/src/assets/icons/dark-map.svg" alt="Location" />
+          Location
+        </div>
+      </div>
+
+      <!-- Right Info -->
+      <div class="text-[18px] text-center md:text-right">
+        © 2024 ARC Constructions. All rights reserved.
+      </div>
+    </div>
+  </Container>
+</footer>

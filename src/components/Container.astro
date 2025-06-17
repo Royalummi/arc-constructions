@@ -1,0 +1,8 @@
+---
+// Container.astro: A reusable responsive container similar to Bootstrap's .container
+const { class: customClass = "" } = Astro.props;
+---
+
+<div class={`w-full max-w-screen-2xl mx-auto ${customClass}`}>
+  <slot />
+</div>

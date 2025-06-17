@@ -1,0 +1,31 @@
+---
+import Container from "../components/Container.astro";
+---
+
+<section
+  id="hero"
+  class="min-h-screen flex items-center justify-start bg-white text-left pt-32 pb-20 relative"
+  style="background-image: url('/src/assets/images/banner.jpg'); background-size: cover; background-position: center;"
+>
+  <div class="absolute inset-0 bg-[#002F704D] opacity-70 z-0"></div>
+  <Container class="px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex flex-col items-start justify-start space-y-6">
+      <h1
+        class="text-[40px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-semibold leading-tight mb-8 text-white text-left break-words max-w-full"
+      >
+        A gateway to <br class="hidden md:block" /> your future
+      </h1>
+      <a
+        href="#about"
+        class="inline-flex items-center text-brand text-base sm:text-lg px-6 sm:px-8 py-3 rounded-lg font-semibold tracking-wide bg-white hover:bg-brand hover:text-white transition border-2 border-white group"
+      >
+        Know more
+        <img
+          src="/src/assets/icons/up-right.svg"
+          alt="Arrow up right"
+          class="ml-2 w-5 h-5 inline"
+        />
+      </a>
+    </div>
+  </Container>
+</section>

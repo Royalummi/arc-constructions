@@ -1,0 +1,69 @@
+---
+import Container from "../components/Container.astro";
+const coreValues = [
+  {
+    title: "Committed",
+    icon: "/src/assets/icons/committed.svg",
+    description:
+      "At Arc Constructions, We Walk The Talk. We Don’t Just Build; We Invest. By Developing Properties Ourselves, We Pour Our Heart And Soul Into Delivering On Time And Within Budget. It’s A Personal Commitment, Etched In Every Brick And Beam.",
+  },
+  {
+    title: "Inspired",
+    icon: "/src/assets/icons/inspired.svg",
+    description:
+      "We Don’t See Empty Lots, We See Possibilities. We’re Not Just Builders, We’re Architects Of Transformation. We Breathe New Life Into Assets, Shape Communities, And Unlock Real Value In Places.",
+  },
+  {
+    title: "People Centric",
+    icon: "/src/assets/icons/people.svg",
+    description:
+      "We Build More Than Homes; We Build The Foundation For Thriving Families. It’s Not Just About Walls, It’s About Fostering Communities Where Comfort And Spirit Flourish.",
+  },
+  {
+    title: "Efficient",
+    icon: "/src/assets/icons/efficient.svg",
+    description:
+      "Functionality Isn’t A Burden, It’s Our Artistic Signature. We Craft Spaces With Visual Integrity, Maximising Every Square Foot Without Sacrificing Aesthetics.",
+  },
+  {
+    title: "Transparent",
+    icon: "/src/assets/icons/transparent.svg",
+    description:
+      "Honesty Isn’t A Tagline, It’s Our Way Of Life. From Clear Communication To Open Processes, We Believe In Building Trust, Brick By Transparent Brick. Client Testimonials Speak Louder Than Words, Budgets Are Demystified, And Progress Unfolds Openly.",
+  },
+];
+---
+
+<section class="bg-brand text-white">
+  <Container class="border-l border-r border-[#E2E2E21A] relative">
+    <!-- Vertical Center Line -->
+    <div
+      class="hidden md:block absolute top-0 left-1/2 h-full w-0.5 bg-[#E2E2E21A] z-0"
+      style="transform: translateX(-50%);"
+    >
+    </div>
+    <!-- Section Title -->
+    <h2
+      class="text-4xl md:text-5xl font-bold mb-16 text-left pt-32 relative z-10"
+    >
+      <span class="text-gray-300 font-bold">Core</span>
+      <span class="font-bold text-white">Values</span>
+    </h2>
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 pb-32 relative z-10">
+      {
+        coreValues.map((value, index) => (
+          <div class="flex items-start space-x-5 border-t border-b border-[#E2E2E21A] p-6 hover:bg-[#004B9E]">
+            <div class="flex flex-col items-start gap-2">
+              <img src={value.icon} alt={value.title} class="w-10 h-10 mt-1" />
+              <h3 class="text-lg font-bold mb-1">{value.title}</h3>
+              <p class="text-sm leading-relaxed text-white">
+                {value.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

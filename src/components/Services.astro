@@ -1,0 +1,150 @@
+---
+import Container from "../components/Container.astro";
+const residentialServices = [
+  {
+    title: "Land Banking",
+    icon: "/src/assets/icons/forest.svg",
+    link: "#",
+  },
+  {
+    title: "Industrial Parks",
+    icon: "/src/assets/icons/factory.svg",
+    link: "#",
+  },
+  {
+    title: "Business Parks",
+    icon: "/src/assets/icons/briefcase.svg",
+    link: "#",
+  },
+  {
+    title: "Residential Spaces",
+    icon: "/src/assets/icons/housing-area.svg",
+    link: "#",
+  },
+];
+const constructionServices = [
+  {
+    title: "Industrial Parks",
+    icon: "/src/assets/icons/factory.svg",
+    link: "#",
+  },
+  {
+    title: "Land Banking",
+    icon: "/src/assets/icons/forest.svg",
+    link: "#",
+  },
+  {
+    title: "Business Parks",
+    icon: "/src/assets/icons/briefcase.svg",
+    link: "#",
+  },
+  {
+    title: "Residential Construction",
+    icon: "/src/assets/icons/housing-area.svg",
+    link: "#",
+  },
+];
+---
+
+<section
+  id="services"
+  class="bg-neutral-background py-section text-text-primary pb-40"
+>
+  <Container class="px-4 sm:px-6 lg:px-8">
+    <!-- Title -->
+    <h2
+      class="text-[56px] text-brand md:text-5xl font-bold mb-4 text-center md:text-left"
+    >
+      Our Services
+    </h2>
+    <!-- Paragraph -->
+    <p
+      class="text-lg font-semibold text-center md:text-left w-full md:w-2/3 mb-10 drop-shadow-[0_2px_1px_rgba(0,0,0,1)]"
+    >
+      Discover our wide range of services tailored to meet the diverse needs of
+      our clients, from residential construction to large-scale industrial and
+      business park developments.
+    </p>
+    <!-- Toggle Buttons & Cards Grid (shared Alpine scope) -->
+    <div x-data="{ tab: 'residential' }">
+      <!-- Toggle Buttons -->
+      <div class="mb-10 flex justify-center md:justify-start gap-4">
+        <button
+          :class="tab === 'residential' ? 'bg-[#333333] text-white' : 'bg-white text-brand border border-[#333333]'"
+          class="px-6 py-2 rounded-full font-semibold transition focus:outline-none"
+          @click="tab = 'residential'"
+        >
+          Residential
+        </button>
+        <button
+          :class="tab === 'construction' ? 'bg-[#333333] text-white' : 'bg-white text-brand border border-[#333333]'"
+          class="px-10 py-4 rounded-full font-semibold transition focus:outline-none"
+          @click="tab = 'construction'"
+        >
+          Construction
+        </button>
+      </div>
+      <!-- Cards Grid -->
+      <div :key="tab">
+        <div x-show="tab === 'residential'">
+          <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+            {
+              residentialServices.map((service, index) => (
+                <div
+                  class="bg-white p-6 rounded-br-[30px] text-center border border-gray-200 flex flex-col items-center justify-between"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    class="w-18 h-18 mb-4"
+                  />
+                  <h3 class="text-[32px] font-semibold mb-2">
+                    {service.title}
+                  </h3>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div x-show="tab === 'construction'">
+          <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+            {
+              constructionServices.map((service, index) => (
+                <div
+                  class="bg-white p-6 rounded-br-[30px] text-center border border-gray-100 flex flex-col items-center justify-between"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    class="w-18 h-18 mb-4"
+                  />
+                  <h3 class="text-[32px] font-semibold mb-2">
+                    {service.title}
+                  </h3>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Know More Button -->
+    <div class="mt-10 text-center float-left">
+      <a
+        href="#"
+        class="inline-flex items-center hover:text-brand transition border border-brand hover:border-brand px-6 py-3 rounded-br-lg text-base md:text-[18px] font-light tracking-wide"
+      >
+        Know More
+        <img
+          src="/src/assets/icons/up-right.svg"
+          alt="Arrow up right"
+          class="ml-2 w-5 h-5 inline"
+        />
+      </a>
+    </div>
+  </Container>
+</section>

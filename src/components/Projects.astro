@@ -1,0 +1,145 @@
+---
+import Container from "../components/Container.astro";
+
+const projectSlides = [
+  {
+    title: "Myntra Warehouse on Soukya Road",
+    year: "2015",
+    area: "Leasable Area: 2 Lac Sq. Ft",
+    image: "/src/assets/images/project-1.jpg",
+  },
+  {
+    title: "#6 Primrose, Next to MG Road",
+    year: "2014",
+    area: "Leasable Area: 3,000 Sq. Ft",
+    image: "/src/assets/images/project-2.jpg",
+  },
+  {
+    title: "Udaan Warehouse on Soukya Road",
+    year: "2009",
+    area: "Leasable Area: 2 Lac Sq. Ft",
+    image: "/src/assets/images/project-1.jpg",
+  },
+  {
+    title: "Udaan Warehouse on Soukya Road",
+    year: "2009",
+    area: "Leasable Area: 2 Lac Sq. Ft",
+    image: "/src/assets/images/project-1.jpg",
+  },
+  {
+    title: "Udaan Warehouse on Soukya Road",
+    year: "2009",
+    area: "Leasable Area: 2 Lac Sq. Ft",
+    image: "/src/assets/images/project-1.jpg",
+  },
+  {
+    title: "Udaan Warehouse on Soukya Road",
+    year: "2009",
+    area: "Leasable Area: 2 Lac Sq. Ft",
+    image: "/src/assets/images/project-1.jpg",
+  },
+  {
+    title: "Udaan Warehouse on Soukya Road",
+    year: "2009",
+    area: "Leasable Area: 2 Lac Sq. Ft",
+    image: "/src/assets/images/project-1.jpg",
+  },
+  {
+    title: "Udaan Warehouse on Soukya Road",
+    year: "2009",
+    area: "Leasable Area: 2 Lac Sq. Ft",
+    image: "/src/assets/images/project-1.jpg",
+  },
+];
+---
+
+<section
+  id="projects"
+  class="bg-neutral-background py-section text-text-primary"
+>
+  <Container class="px-4 sm:px-6 lg:px-8">
+    <!-- Section Heading -->
+    <h2 class="text-5xl font-bold text-center md:text-left mb-6">
+      Completed <span class="text-brand">Projects</span>
+    </h2>
+
+    <!-- Section Paragraph -->
+    <p
+      class="text-lg font-semibold text-center md:text-left w-full md:w-2/3 mb-10 drop-shadow-[0_2px_1px_rgba(0,0,0,1)]"
+    >
+      At Arc Constructions, we take pride in our diverse portfolio of
+      successfully completed projects. Each venture showcases our commitment to
+      quality, innovation, and client satisfaction. Explore our past projects to
+      witness the excellence we bring to every development.
+    </p>
+
+    <!-- Carousel -->
+    <div
+      x-data="{ current: 0, slides: JSON.parse($el.getAttribute('data-slides')), slideWidth: 575 }"
+      data-slides={`${JSON.stringify(projectSlides)}`}
+      class="relative overflow-hidden mx-auto"
+    >
+      <!-- Slides Row -->
+      <div
+        class="flex transition-transform duration-500"
+        :style="`transform: translateX(-${current * slideWidth}px); width: ${slides.length * slideWidth}px;`"
+      >
+        <template x-for="(slide, index) in slides" :key="index">
+          <div class="flex-shrink-0 pr-16" :style="`width: ${slideWidth}px`">
+            <img
+              :src="slide.image"
+              alt="Project Image"
+              class="rounded-br-[50px] object-cover w-full h-[280px]"
+            />
+            <div class="mt-4 text-sm text-center md:text-left">
+              <p class="font-medium" x-text="slide.title"></p>
+              <p class="text-gray-600 mt-1">
+                <span x-text="slide.year"></span> • <span x-text="slide.area"
+                ></span>
+              </p>
+            </div>
+          </div>
+        </template>
+      </div>
+      <!-- Navigation Arrows -->
+      <div class="flex justify-between items-center mt-8">
+        <!-- View All Property Button -->
+        <div class="text-center">
+          <a
+            href="#"
+            class="inline-flex items-center hover:text-brand transition border border-brand hover:border-brand px-6 py-3 rounded-br-lg text-base md:text-[18px] font-light tracking-wide"
+          >
+            Know More
+            <img
+              src="/src/assets/icons/up-right.svg"
+              alt="Arrow up right"
+              class="ml-2 w-5 h-5 inline"
+            />
+          </a>
+        </div>
+        <div class="flex items-center space-x-4 pr-5">
+          <button
+            class="border rounded-full w-10 h-10 flex items-center justify-center text-xl"
+            @click="current = Math.max(current - 1, 0)"
+            :disabled="current === 0"
+            aria-label="Previous"
+          >
+            &#8592;
+          </button>
+          <div class="text-gray-700 font-medium">
+            <span x-text="current + 1"></span>/<span x-text="slides.length - 1"
+            ></span>
+          </div>
+          <button
+            class="border rounded-full w-10 h-10 flex items-center justify-center text-xl"
+            @click="current = Math.min(current + 1, slides.length - 2)"
+            :disabled="current >= slides.length - 2"
+            aria-label="Next"
+          >
+            &#8594;
+          </button>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

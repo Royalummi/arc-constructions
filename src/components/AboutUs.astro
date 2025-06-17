@@ -1,0 +1,75 @@
+---
+import Container from "../components/Container.astro";
+---
+
+<section
+  id="about"
+  class="bg-white py-12 sm:py-16 md:py-20 lg:py-24 text-gray-800"
+>
+  <Container class="w-full px-4 sm:px-6 md:px-8 lg:px-12">
+    <div
+      class="flex flex-col md:flex-row items-start justify-between gap-6 sm:gap-8 md:gap-10 w-full"
+    >
+      <div class="md:flex-1 md:max-w-[60%] w-full mb-8 md:mb-0">
+        <!-- Section Title -->
+        <h6
+          class="text-lg sm:text-2xl md:text-[32px] font-light mb-2 sm:mb-4 md:mb-6 text-center md:text-left text-brand"
+        >
+          About Us
+        </h6>
+        <!-- Section Heading -->
+        <h2
+          class="text-xl sm:text-3xl md:text-[40px] lg:text-[56px] font-semibold mb-4 sm:mb-6 md:mb-8 text-center md:text-left text-brand leading-tight md:leading-[1.5]"
+        >
+          Building dreams,<br class="hidden md:block" /> brick by brick, since the
+          1960s.
+        </h2>
+
+        <!-- Content -->
+        <div
+          class="text-base sm:text-lg md:text-xl lg:text-[24px] leading-relaxed"
+        >
+          <p class="leading-relaxed mb-4 sm:mb-6">
+            Since the 1960s, we've been building in Bengaluru, starting with
+            handmade bricks and tiles. Today, we construct everything from cosy
+            homes to busy business centres using steel and glass. We're a
+            dedicated and family-oriented team, using the latest tools while
+            staying true to our roots.
+          </p>
+
+          <a
+            href="#"
+            class="inline-flex items-center hover:text-brand transition border border-brand hover:border-brand px-4 sm:px-6 py-2 sm:py-3 rounded-br-lg text-base md:text-[18px] font-light tracking-wide text-brand mt-4 sm:mt-6 md:mt-[50px] lg:mt-[70px]"
+          >
+            Know More
+            <img
+              src="/src/assets/icons/up-right.svg"
+              alt="Arrow up right"
+              class="ml-2 w-5 h-5 inline"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="md:flex-1 md:max-w-[40%] w-full flex justify-center md:justify-end"
+      >
+        <div
+          class="flex items-start gap-4 sm:gap-4 md:gap-6 flex-wrap justify-center md:justify-start"
+        >
+          {
+            ["about-1.jpg", "about-2.jpg", "about-3.jpg", "about-4.jpg"].map(
+              (img, i) => (
+                <img
+                  src={`/src/assets/images/${img}`}
+                  alt={`About Us Image ${i + 1}`}
+                  class={`w-[60px] sm:w-[90px] md:w-[110px] lg:w-[125px] h-[200px] md:h-[250px] lg:h-[500px] object-cover rounded-[1.5rem] sm:rounded-[2.5rem] md:rounded-[3.5rem] lg:rounded-[5rem] shadow-lg ${i % 2 === 1 ? "mt-4 sm:mt-6 md:mt-[60px] lg:mt-[100px]" : "mt-0"}`}
+                  loading="lazy"
+                />
+              )
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
