@@ -43,7 +43,7 @@ import Container from "../components/Container.astro";
           >
             Know More
             <img
-              src="/src/assets/icons/up-right.svg"
+              src="/icons/up-right.svg"
               alt="Arrow up right"
               class="ml-2 w-5 h-5 inline"
             />
@@ -60,7 +60,7 @@ import Container from "../components/Container.astro";
             ["about-1.jpg", "about-2.jpg", "about-3.jpg", "about-4.jpg"].map(
               (img, i) => (
                 <img
-                  src={`/src/assets/images/${img}`}
+                  src={`/images/${img}`}
                   alt={`About Us Image ${i + 1}`}
                   class={`w-[60px] sm:w-[90px] md:w-[110px] lg:w-[125px] h-[200px] md:h-[250px] lg:h-[500px] object-cover rounded-[1.5rem] sm:rounded-[2.5rem] md:rounded-[3.5rem] lg:rounded-[5rem] shadow-lg ${i % 2 === 1 ? "mt-4 sm:mt-6 md:mt-[60px] lg:mt-[100px]" : "mt-0"}`}
                   loading="lazy"
