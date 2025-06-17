@@ -1,48 +1,128 @@
-# Astro Starter Kit: Basics
+# ARC Constructions Website
+
+A modern, responsive company website for ARC Constructions, built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/). This site features custom layouts, interactive UI components, and a mobile-first design to showcase ARC Constructions' services, projects, and contact information.
+
+## 🚀 Features
+
+- **Astro.js** for fast, modern static site generation
+- **Tailwind CSS** for utility-first, responsive styling
+- **Custom Components**: Header, Hero, About Us, Projects Carousel, Services Tabs, Core Values, Contact Form, Footer
+- **Responsive Design**: Mobile, tablet, and desktop optimized
+- **Interactive UI**: Alpine.js-powered carousels and tabbed sections
+- **Google Fonts**: Manrope for a clean, professional look
+- **Consistent Layout**: Reusable Container component for section alignment
+- **Accessible & SEO-friendly**
+
+## 📁 Project Structure
+
+```
+arc-constructions/
+├── public/
+│   ├── favicon.svg
+│   └── ...
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── icons/
+│   │   └── ...
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── AboutUs.astro
+│   │   ├── Projects.astro
+│   │   ├── Services.astro
+│   │   ├── CoreValue.astro
+│   │   ├── ContactForm.astro
+│   │   ├── Footer.astro
+│   │   └── Container.astro
+│   ├── layouts/
+│   │   └── BaseLayout.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
+├── astro.config.mjs
+├── tailwind.config.js
+├── postcss.config.js / postcss.config.cjs
+├── tsconfig.json
+├── package.json
+└── README.md
+```
+
+## 🧑‍💻 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+
+### Installation
+
+1. **Clone the repository:**
+   ```sh
+   git clone <your-repo-url>
+   cd arc-constructions
+   ```
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+### Development
+
+Start the local development server:
 
 ```sh
-npm create astro@latest -- --template basics
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Visit [http://localhost:4321](http://localhost:4321) to view the site.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Building for Production
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Build the site for production:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```sh
+npm run build
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The output will be in the `dist/` folder.
 
-## 🧞 Commands
+### Preview Production Build
 
-All commands are run from the root of the project, from a terminal:
+Preview the built site locally:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```sh
+npm run preview
+```
 
-## 👀 Want to learn more?
+## 📦 Scripts
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command           | Description                                |
+| ----------------- | ------------------------------------------ |
+| `npm install`     | Install dependencies                       |
+| `npm run dev`     | Start local dev server at `localhost:4321` |
+| `npm run build`   | Build your production site to `./dist/`    |
+| `npm run preview` | Preview your build locally                 |
+| `npm run astro`   | Run Astro CLI commands                     |
+
+## 🛠️ Customization
+
+- **Tailwind Config:** Edit `tailwind.config.js` for custom colors, fonts, and breakpoints.
+- **Global Styles:** Edit `src/styles/global.css` for base styles.
+- **Assets:** Place images and icons in `src/assets/images/` and `src/assets/icons/`.
+- **Components:** Reusable UI in `src/components/`.
+
+## 📚 Learn More
+
+- [Astro Documentation](https://docs.astro.build)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+## 🏗️ Credits
+
+- Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/)
+- Starter template: Astro Basics
+
+---
+
+© 2025 ARC Constructions. All rights reserved.
